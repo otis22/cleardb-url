@@ -1,0 +1,35 @@
+name: AUTOFIX
+
+on: push
+
+jobs:
+  ecs:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        uses: actions/checkout@v2
+        with:
+          # Must be used to trigger workflow after push
+          token: ${{ secrets.ACCESS_TOKEN }}
+      -
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 7.4
+          coverage: none
+
+      -   run: composer install --no-progress --ansi
+      ## Run ecs fix
+      -   run: vendor/bin/ecs --ansi --fix
+      -
+        uses: EndBug/add-and-commit@v5.1.0
+        with:
+          # The arguments for the `git add` command (see the paragraph below for more info)
+          add: .
+          message: "[ci-bot] ecs autofix"
+          # see https://github.community/t/github-actions-bot-email-address/17204
+          author_name: "GitHub Action"
+          author_email: "action@github.com"
+
+        env:
+          # to get push access
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
