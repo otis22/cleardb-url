@@ -9,6 +9,7 @@
         }
     ],
     "require-dev": {
+        "php": "^7.4",
         "phpunit/phpunit": "^9.1",
         "phpstan/phpstan": "^0.12.19",
         "otis22/php-coverage-checker": "^1.2",
@@ -27,7 +28,7 @@
     },
     "scripts": {
         "unit": "vendor/bin/phpunit",
-        "coverage": "vendor/bin/php-coverage-checker build/logs/clover.xml 100",
+        "coverage": "vendor/bin/php-coverage-checker build/logs/clover.xml 80",
         "static-analyze": "vendor/bin/phpstan analyse --level=max src tests",
         "style": "vendor/bin/ecs check",
         "style-fix": "vendor/bin/ecs check --fix",
