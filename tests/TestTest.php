@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Otis22\PhpSkeleton;
+namespace Otis22\ClearDb;
 
 use PHPUnit\Framework\TestCase;
 

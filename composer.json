@@ -1,6 +1,6 @@
 {
-    "name": "otis22/php-skeleton",
-    "description": "Php skeleton for small packages with most important qaulity ",
+    "name": "otis22/cleardb-url",
+    "description": "Clear-db-url parser.",
     "license": "MIT",
     "authors": [
         {
@@ -17,12 +17,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Otis22\\PhpSkeleton\\": "src"
+            "Otis22\\ClearDb\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Otis22\\PhpSkeleton\\": "tests"
+            "Otis22\\ClearDb\\": "tests"
         }
     },
     "scripts": {

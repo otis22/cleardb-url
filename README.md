@@ -1,6 +1,7 @@
 # otis22/cleardb-url
 
-Package for parsing clear db url. Package is useful for heroku users. 
+Clear-db-url parser. [Cleardb](https://www.cleardb.com/) is a db as service.
+Package is useful for heroku users. 
 
 ![GitHub CI](https://github.com/otis22/php-skeleton/workflows/CI/badge.svg)
 ![Autofix](https://github.com/otis22/php-skeleton/workflows/AUTOFIX/badge.svg)
