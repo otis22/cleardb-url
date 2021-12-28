@@ -1,7 +1,6 @@
 # otis22/cleardb-url
 
-Clear-db-url parser. [Cleardb](https://www.cleardb.com/) is a db as service.
-Package is useful for heroku users. 
+Clear-db-url parser. [Cleardb](https://www.cleardb.com/) is a db as service. Useful for heroku users.
 
 ![GitHub CI](https://github.com/otis22/cleardb-url/workflows/CI/badge.svg)
 ![Autofix](https://github.com/otis22/cleardb-url/workflows/AUTOFIX/badge.svg)
@@ -17,7 +16,7 @@ composer require otis22/cleardb-url
 
 ## For heroku users
 
-Heroku server put clearDb url to environments. This function use CLEARDB_DATABASE_URL. 
+Heroku server put clearDb url to environments. This function use env with name CLEARDB_DATABASE_URL. 
 
 ```php
 
@@ -32,7 +31,7 @@ $credential->pass(); #password
 $credential->user(); #user   
 ```
 
-### If you using phinx on heroku
+### For phinx on heroku
 
 ```php
 use function Otis22\ClearDb\phinx;
@@ -51,7 +50,7 @@ return
 ...
 ```
 
-### If you want parse custom clearDb url
+### Parse custom clearDb url
 
 ```php
 
