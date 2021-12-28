@@ -18,7 +18,10 @@
     "autoload": {
         "psr-4": {
             "Otis22\\ClearDb\\": "src"
-        }
+        },
+        "files": [
+            "src/facades.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
