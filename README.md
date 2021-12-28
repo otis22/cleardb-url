@@ -7,6 +7,65 @@ Package is useful for heroku users.
 ![Autofix](https://github.com/otis22/cleardb-url/workflows/AUTOFIX/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/otis22/cleardb-url/badge.svg?branch=master)](https://coveralls.io/github/otis22/cleardb-url?branch=master)
 
+### How to use 
+
+Install package
+
+```shell
+composer require otis22/cleardb-url
+```
+
+## For heroku users
+
+Heroku server put clearDb url to environments. This function use CLEARDB_DATABASE_URL. 
+
+```php
+
+use function Otis22\ClearDb\credential;
+
+$credential = credential();
+
+$credential->db(); #db name
+$credential->driver(); #db type(mysql, pgsql, ...)
+$credential->host(); #host
+$credential->pass(); #password
+$credential->user(); #user   
+```
+
+### If you using phinx on heroku
+
+```php
+use function Otis22\ClearDb\phinx;
+
+return
+[
+    'paths' => [
+        'migrations' => '%%PHINX_CONFIG_DIR%%/db/migrations',
+        'seeds' => '%%PHINX_CONFIG_DIR%%/db/seeds'
+    ],
+    'environments' => [
+        'default_migration_table' => 'phinxlog',
+        'default_environment' => 'production',
+        'production' => phinx()->asArray()
+    ],
+...
+```
+
+### If you want parse custom clearDb url
+
+```php
+
+use Otis22\ClearDb\ParsedUrl;
+use Otis22\ClearDb\Credential;
+
+$credential = new Credential(
+    new ParsedUrl('mysql://user:pass@host/dbname?reconnect=true')
+);
+# Available for getting db credentials
+$credential->db();
+...
+```
+
 ## Contributing
 
 For run all tests
